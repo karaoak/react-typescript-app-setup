@@ -9,8 +9,9 @@
     "lint": "eslint src/**/*.{ts,tsx} --fix",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "type-check": "tsc -p tsconfig.json --noEmit --incremental",
     "precommit": "lint-staged",
-    "prepush": "npm run test:coverage"
+    "prepush": "npm run type-check & npm run test:coverage"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
